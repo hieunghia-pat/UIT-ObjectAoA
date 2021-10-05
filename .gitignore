@@ -1,0 +1,36 @@
+*.pyc
+
+# Ignore emacs backup files
+*~
+
+# Ignore extra (generated) files in vis folder.
+vis/vis.json
+vis/imgs/*.jpg
+
+# Generated results
+eval_results
+
+# Pycharm settings
+.idea
+
+data
+test_data
+
+cider
+
+coco-caption
+
+examine.py
+generate_caption.py
+make_final_result.py
+analyze_data.py
+mesh_caps_ids.txt
+out.txt
+predict.py
+process_m2.py
+result*
+test_captions.json
+
+*.zip
+
+viecap_log_relation_transformer_bu
