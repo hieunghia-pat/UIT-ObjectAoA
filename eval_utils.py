@@ -137,9 +137,18 @@ def eval_split(model, crit, loader, eval_kwargs={}):
             for i in range(loader.batch_size):
                 print('\n'.join([utils.decode_sequence(loader.get_vocab(), _['seq'].unsqueeze(0))[0] for _ in model.done_beams[i]]))
                 print('--' * 10)
-        sents = utils.decode_sequence(loader.get_vocab(), seq)
+        
+        max_sents = []
+        for i in range(loader.batch_size):
+            sents = [utils.decode_sequence(loader.get_vocab(), _['seq'].unsqueeze(0))[0] for _ in model.done_beams[i]]
+            max_len = 0
+            max_sent = ""    
+            for sent in sents:
+                if len(sent) > max_len:
+                    max_sent = sent
+            max_sents.append(max_sent)
 
-        for k, sent in enumerate(sents):
+        for k, sent in enumerate(max_sents):
             image_id = data['infos'][k]['id']
             entry = {'image_id': image_id, 'caption': sent,
                      'file_path': data['infos'][k]['file_path']}

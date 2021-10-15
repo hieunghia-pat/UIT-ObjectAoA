@@ -20,7 +20,7 @@ cider
 
 coco-caption
 
-examine.py
+intermediate_stage.py
 generate_caption.py
 make_final_result.py
 analyze_data.py
@@ -28,7 +28,7 @@ mesh_caps_ids.txt
 out.txt
 predict.py
 process_m2.py
-result*
+tmp_results.json
 test_captions.json
 
 *.zip
