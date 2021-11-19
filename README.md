@@ -66,7 +66,8 @@ python3 train.py  --id relation_transformer_bu_rl \
 ```
 
 #### Evaluate in the validation split
-!python3 eval.py  --dump_images 0 \
+```
+python3 eval.py  --dump_images 0 \
                   --num_images -1 \
                   --model <path-to-your-checkpoint-folder>/model-best.pth \
                   --infos_path <path-to-your-checkpoint-folder>/infos_relation_transformer_bu_rl-best.pkl \
@@ -79,3 +80,4 @@ python3 train.py  --id relation_transformer_bu_rl \
                   --input_rel_box_dir data/viecap4hbu_box_relative \
                   --language_eval 1 \
                   --beam_size 2
+```
