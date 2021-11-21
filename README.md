@@ -66,10 +66,11 @@ python3 train.py  --id relation_transformer_bu_rl \
 ```
 
 #### Evaluate in the validation split
+```
 !python3 eval.py  --dump_images 0 \
                   --num_images -1 \
                   --model <path-to-your-checkpoint-folder>/model-best.pth \
-                  --infos_path <path-to-your-checkpoint-folder>/infos_relation_transformer_bu_rl-best.pkl \
+                  --infos_path <path-to-your-checkpoint-folder>/infos_relation_transformer_bu-best.pkl \
                   --image_root <image-folder> \
                   --input_json data/viecap4htalk.json \
                   --input_fc_dir data/viecap4hbu_fc \
@@ -79,3 +80,26 @@ python3 train.py  --id relation_transformer_bu_rl \
                   --input_rel_box_dir data/viecap4hbu_box_relative \
                   --language_eval 1 \
                   --beam_size 2
+```
+
+#### Section for vieCap4H organizers
+To evaluate the model on the validation split, please use the following command:
+```
+!python3 eval.py  --dump_images 0 \
+                  --num_images -1 \
+                  --model saved_models/model-best.pth \
+                  --infos_path saved_models/infos_relation_transformer_bu-best.pkl \
+                  --input_json data/viecap4htalk.json \
+                  --input_fc_dir data/viecap4hbu_fc \
+                  --input_att_dir data/viecap4hbu_att \
+                  --input_label_h5 data/viecap4htalk_label.h5  \
+                  --input_box_dir data/viecap4hbu_box \
+                  --input_rel_box_dir data/viecap4hbu_box_relative \
+                  --language_eval 1 \
+                  --split val \
+                  --beam_size 2
+```                  
+
+The result will be printed out in the console concurrently in the `out.txt` file, then you can manually map the outputs in `out.txt` to image id by the json file.
+
+For some unexpected reasons of our devices, the extracted features of public test set and private test set was gone. These features can be created via our [repository](https://github.com/hieunghia-pat/UIT-BottomUpAttention). Because of out limite time available, we can not recreate features for these two tests set. We sorry for this inconvenience.
