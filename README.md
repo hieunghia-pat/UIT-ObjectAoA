@@ -102,4 +102,4 @@ python3 eval.py  --dump_images 0 \
 
 The result will be printed out in the console concurrently in the `out.txt` file, then you can manually map the outputs in `out.txt` to image id by the json file.
 
-For some unexpected reasons of our devices, the extracted features of public test set and private test set were gone. These features can be created via our [repository](https://github.com/hieunghia-pat/UIT-BottomUpAttention). Because of our limite time available, we can not recreate features for these two tests set. We sorry for this inconvenience.
+As some unexpected reasons of our devices, the extracted features of public test set and private test set were gone. These features can be created via our [repository](https://github.com/hieunghia-pat/UIT-BottomUpAttention). Because of our limite time available, we can not recreate features for these two tests set. We sorry for this inconvenience.
