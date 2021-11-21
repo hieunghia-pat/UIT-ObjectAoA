@@ -67,7 +67,7 @@ python3 train.py  --id relation_transformer_bu_rl \
 
 #### Evaluate in the validation split
 ```
-!python3 eval.py  --dump_images 0 \
+python3 eval.py  --dump_images 0 \
                   --num_images -1 \
                   --model <path-to-your-checkpoint-folder>/model-best.pth \
                   --infos_path <path-to-your-checkpoint-folder>/infos_relation_transformer_bu-best.pkl \
@@ -85,7 +85,7 @@ python3 train.py  --id relation_transformer_bu_rl \
 #### Section for vieCap4H organizers
 To evaluate the model on the validation split, please use the following command:
 ```
-!python3 eval.py  --dump_images 0 \
+python3 eval.py  --dump_images 0 \
                   --num_images -1 \
                   --model saved_models/model-best.pth \
                   --infos_path saved_models/infos_relation_transformer_bu-best.pkl \
